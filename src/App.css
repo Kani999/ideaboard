@@ -48,6 +48,25 @@
   padding:10px;
 }
 
+.input {
+  border: 0;
+  background: none;
+  outline: none;
+  margin-top:10px;
+  width: 140px;
+  font-size: 11px;
+}
+
+.input:focus {
+  border: solid 1px lightgrey;
+}
+
+textarea {
+  resize: none;
+  height: 90px;
+  font-size: 11px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
