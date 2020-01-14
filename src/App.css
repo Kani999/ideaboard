@@ -67,6 +67,18 @@ textarea {
   font-size: 11px;
 }
 
+.deleteButton {
+  visibility: hidden;
+  float: right;
+  margin: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  color: red;
+}
+
+.tile:hover .deleteButton {
+  visibility: visible;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
