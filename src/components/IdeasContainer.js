@@ -5,6 +5,7 @@ import update from 'immutability-helper'
 
 import Idea from './Idea'
 import IdeaForm from './IdeaForm'
+import Notification from './Notification'
 
 class IdeasContainer extends Component {
   constructor(props) {
@@ -12,7 +13,8 @@ class IdeasContainer extends Component {
     this.state = {
       ideas: [],
       editingIdeaId: null,
-      notification: ''
+      notification: '',
+      transitionIn: false
     }
   }
 
@@ -34,9 +36,8 @@ class IdeasContainer extends Component {
            onClick={this.addNewIdea} >
             New Idea
           </button>
-          <span className="notification">
-            {this.state.notification}
-          </span>
+          <Notification in={this.state.transitionIn} 
+            notification={this.state.notification}/>
         </div>
 
         <div>
@@ -89,13 +90,15 @@ class IdeasContainer extends Component {
     })
     this.setState({
       ideas: ideas,
-      notification: 'All changes saved'
+      notification: 'All changes saved',
+      transitionIn: true
     })
   }
 
   // resets Notification to blank line
   resetNotification = () => {
-    this.setState({notification: ''})
+    this.setState({notification: '',
+                   transitionIn: false })
   }
 
   enableEditing = (id) => {
